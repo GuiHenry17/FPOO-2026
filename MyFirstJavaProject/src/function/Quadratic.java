@@ -2,12 +2,11 @@ package function;
 
 public class Quadratic {
 	
-	private float varX = 0;
 	private float varA = 0;
 	private float varB = 0;
 	private float varC = 0;
 	
-	public Quadratic(float varX, float varA, float varB, float varC) {
+	public Quadratic(float varA, float varB, float varC) {
 		
 		//toDO
 	}
