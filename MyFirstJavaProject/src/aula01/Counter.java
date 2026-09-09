@@ -2,15 +2,24 @@ package aula01;
 
 public class Counter {
 
-	private int start;
-	private int end;
-	private int step;
-
-	public Counter(int start, int end, int step) {
+	private int start = 1;
+	private int end   = 10;
+	private int step  = 1;
+	
+	public Counter() {
+		//nothing for while
+	}
+	
+	public Counter(int start, int end) {
 		
 		this.start = start;
 		this.end   = end;
-		this.step  = step;
+	}
+
+	public Counter(int start, int end, int step) {
+		
+		this(start, end);
+		this.step  = Math.abs(step);
 	}
 	
 	public void count() {
@@ -32,4 +41,23 @@ public class Counter {
 		System.out.println();
 		
 	}
+	
+	//********************************************/
+	//Test only
+	//********************************************/
+	public static void main(String[] args) {
+		Counter counter = null; //Isso é uma referência chamada counter
+		counter = new Counter(); // cria um Objeto counter em algum lugar na memória
+		counter.count();
+		counter.countDown();
+		
+		counter = new Counter(5,15);
+		counter.count();
+		counter.countDown();
+		
+		counter = new Counter(1,10,2);
+		counter.count();
+		counter.countDown();
+	}
 }
+
