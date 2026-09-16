@@ -2,54 +2,82 @@ package function;
 
 public class Quadratic {
 	
-	private float varA = 0;
-	private float varB = 0;
-	private float varC = 0;
+	private float a = 0;
+	private float b = 0;
+	private float c = 0;
 	
-	public Quadratic(float varA, float varB, float varC) {
-		
-		//toDO
+	public Quadratic(float a, float b, float c) {
+		this.a = a;
+		this.b = b;
+		this.c = c;
+
 	}
 	
-	public void vertex() {
+	public float delta() {
 		
-		//toDO
+		return (b*b - 4*a*c);
 	}
 	
-	public void delta() {
-		
-		//toDO
+	public boolean isConcaveUp() {
+		return (a > 0);
 	}
 	
-	public void root1() {
+	public float[] rootsValues() {
 		
-		//toDO
+		float delta = delta();
+		if(delta < 0)
+			return new float[0];
+		
+		float x1 = (float) (-b + Math.sqrt(delta)) / (2*a);
+		if(delta == 0) {
+			float[] result = {x1};
+			return result;
+		}
+		else {
+			float x2 = (float) (-b - Math.sqrt(delta)) / (2*a);
+			float[] result = {x1, x2};
+			return result;
+		}
+			
 	}
 	
-	public void root2() {
+	public int numberOfRoots() {
 		
-		//toDO
+		float delta = delta();
+		if(delta < 0)
+			return 0;
+		if(delta == 0)
+			return 1;
+		return 2;
 	}
 	
-	public void hasRealRoots() {
-		
-		//toDO
+	public float vertexCoordinate() {
+		return (-b / (2*a));
 	}
 	
-	
-	public void isConcaveUp() {
-		
-		//toDO
+	public float valueFor(float x) {
+		return a*(x*x) + b*x + c;
 	}
 	
-	public void isConcaveDown() {
+	//***********************************************//
+	//Test
+	//***********************************************//
+	public static void main(String[] args) {
 		
-		//toDO
-	}
-	
-	public void yAxisInterceptionPoint() {
+		float a=1, b=12, c=35;
+		Quadratic function = new Quadratic(a,b,c);
 		
-		//toDO
+		if(function.isConcaveUp())
+			System.out.println("Concavidade para cima");
+		else
+			System.out.println("Concavidade para baixo");
+		
+		System.out.println("A função tem " + function.numberOfRoots() + " raízes.");
+		
+		System.out.println("As raízes são:");
+		float[] roots = function.rootsValues();
+		for(int i=0; i<roots.length; i++)
+			System.out.printf("x%d = %5.2f ", i+1, roots[i]);
 	}
 	
 	
