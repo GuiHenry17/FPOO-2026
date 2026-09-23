@@ -4,27 +4,30 @@ import java.util.Scanner;
 
 import br.edu.utfpr.tsi.addressbook.control.PersonController;
 import br.edu.utfpr.tsi.addressbook.view.PersonView;
+import br.edu.utfpr.tsi.addressbook.view.util.ConsoleInput;
 
 public class AddressBookApp {
 
     private Scanner scanner;
 
+    private ConsoleInput console;
     private PersonView personView;
     private PersonController personController;
 
     public AddressBookApp() {
 
         this.scanner = new Scanner(System.in);
+        this.console = new ConsoleInput(scanner);
         this.personController = new PersonController();
-        this.personView = new PersonView(scanner, personController);
+        this.personView = new PersonView(console, personController);
     }
 
     private void showWelcomeMessage() {
 
         System.out.println("""
-                ========================================
-                Address Book Application - UTFPR/TSI
-                ========================================
+                ==========================================
+                   Address Book Application - UTFPR/TSI   
+                ==========================================
                 """);
     }
 
@@ -36,7 +39,7 @@ public class AddressBookApp {
     public void run() {
 
         showWelcomeMessage();
-        personView.createMultiplePeople();
+        personView.registerMultiplePersons();
         showGoodbyeMessage();
     }
 

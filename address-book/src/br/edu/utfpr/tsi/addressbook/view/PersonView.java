@@ -2,58 +2,45 @@ package br.edu.utfpr.tsi.addressbook.view;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 import br.edu.utfpr.tsi.addressbook.control.PersonController;
+import br.edu.utfpr.tsi.addressbook.view.util.ConsoleInput;
 
 public class PersonView {
 
-    private Scanner scanner;
+	private ConsoleInput console;
     private PersonController controller = null;
 
-    public PersonView(Scanner scanner, PersonController controller) {
+    public PersonView(ConsoleInput console, PersonController controller) {
 
-        this.scanner = scanner;
+        this.console    = console;
         this.controller = controller;
     }
+    
+    
 
-    public void createPerson() {
+    public void registerPerson() {
 
-        System.out.print("Nome: ");
-        String firstName = scanner.nextLine();
-
-        System.out.print("Sobrenome: ");
-        String lastName = scanner.nextLine();
-
-        System.out.print("Data de Nascimento (dd/mm/aaaa): ");
-        String input = scanner.nextLine();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate birthDate = LocalDate.parse(input, formatter);
-
-        System.out.print("Email: ");
-        String email = scanner.nextLine();
-
-        System.out.print("Telefone: ");
-        String phone = scanner.nextLine();
+        String firstName    = console.readText("Nome: ");
+        String lastName     = console.readText("Sobrenome: ");
+        LocalDate birthDate = console.readDate("Data de nascimento: ");
+        String email        = console.readText("Email: ");
+        String phone        = console.readText("Telefone: ");
 
         controller.createPerson(firstName, lastName, birthDate, email, phone);
     }
 
-    private boolean shouldContinue(String message) {
 
-        System.out.print(message + " ");
-        String answer = scanner.nextLine().trim().toUpperCase();
-
-        return answer.equals("S");
-    }
-
-    public void createMultiplePeople() {
+    public void registerMultiplePersons() {
 
         System.out.println("--Cadastro de Pessoas--");
 
         do {
-            createPerson();
-        } while (shouldContinue("Deseja cadastrar outra pessoa? (S/N)"));
+            registerPerson();
+        } while (console.askConfirmation("Deseja cadastrar outra pessoa? (S/N)"));
     }
+    
+
 }
