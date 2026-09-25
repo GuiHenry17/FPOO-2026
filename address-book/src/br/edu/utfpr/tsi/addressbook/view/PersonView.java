@@ -1,11 +1,8 @@
 package br.edu.utfpr.tsi.addressbook.view;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.util.Scanner;
-
 import br.edu.utfpr.tsi.addressbook.control.PersonController;
+import br.edu.utfpr.tsi.addressbook.model.Person;
 import br.edu.utfpr.tsi.addressbook.view.util.ConsoleInput;
 
 public class PersonView {
@@ -32,6 +29,15 @@ public class PersonView {
         controller.createPerson(firstName, lastName, birthDate, email, phone);
     }
 
+    public void showPerson(Person person) {
+
+        System.out.println("\n-- Pessoa cadastrada --");
+        System.out.println("Nome: " + person.getFirstName());
+        System.out.println("Sobrenome: " + person.getLastName());
+        System.out.println("Data de nascimento: " + person.getBirthDate());
+        System.out.println("Email: " + person.getEmail());
+        System.out.println("Telefone: " + person.getPhone());
+    }
 
     public void registerMultiplePersons() {
 
