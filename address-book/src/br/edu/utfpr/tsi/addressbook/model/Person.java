@@ -2,6 +2,8 @@ package br.edu.utfpr.tsi.addressbook.model;
 
 import java.time.LocalDate;
 
+import br.edu.utfpr.tsi.addressbook.model.Address;
+
 public class Person {
 	
 	private String firstName;
@@ -9,8 +11,11 @@ public class Person {
 	private LocalDate birthDate;
 	private String email;
 	private String phone;
+	private Address address;
 	
 	
+	
+
 	public Person() {
 		
 		this.firstName = "";
@@ -75,6 +80,14 @@ public class Person {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 	

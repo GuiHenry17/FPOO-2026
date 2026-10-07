@@ -1,5 +1,6 @@
 package br.edu.utfpr.tsi.addressbook.view.util;
 
+import java.awt.Toolkit;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -41,6 +42,18 @@ public class ConsoleInput {
     	}
     	catch (DateTimeParseException e) {
     		System.out.println(DATE_ERROR_MESSAGE);
+    		}
+    	}
+    }
+    
+    public int readInt(String prompt) {
+    	
+    	while(true) {
+    		try {
+    			System.out.print(prompt);
+    			return Integer.parseInt(scanner.nextLine().trim());
+    		} catch (NumberFormatException e) {
+    			Toolkit.getDefaultToolkit().beep();	
     		}
     	}
     }
