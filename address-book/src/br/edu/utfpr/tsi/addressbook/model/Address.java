@@ -1,5 +1,7 @@
 package br.edu.utfpr.tsi.addressbook.model;
 
+import java.text.ParseException;
+
 public class Address {
 	
 	private String street;
@@ -77,6 +79,32 @@ public class Address {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	@Override
+	public String toString() {
+		
+		return new StringBuilder()
+				.append("Address{")
+				.append(getStreet())
+				.append(",")
+				.append(getNumber())
+				.append(",")
+				.append(getComplement())
+				.append(",")
+				.append(getNeighborhood())
+				.append(",")
+				.append(getCity())
+				.append(",")
+				.append(getState())
+				.append("}")
+				.toString();
+	}
+	
+	
+	public static Address parse(String text) throws ParseException{
+		
+		return null;
 	}
 
 	
