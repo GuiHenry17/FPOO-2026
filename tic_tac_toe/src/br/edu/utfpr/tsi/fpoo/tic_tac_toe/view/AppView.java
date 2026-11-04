@@ -4,113 +4,123 @@ import br.edu.utfpr.tsi.fpoo.tic_tac_toe.util.Terminal;
 
 public class AppView {
 
-	public void showWelcome(){
-		
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@           _____     _____  _____  ___  _____  _____  ___  _____              @");
-		System.out.println("@             |    |  |        |   |   | |        |   |   | |                  @");
-		System.out.println("@             |    |  |        |   | = | |        |   |   | |====              @");
-		System.out.println("@             |    |  |____    |   |   | |____    |   |___| |____              @");
-		System.out.println("@______________________________________________________________________________@");
-		System.out.println("@                                                                              @");
-		System.out.println("@                            UTFPR - CAMPUS TOLEDO                             @");
-		System.out.println("@              CURSO SUPERIOR DE TECNLOGIA EM SISTEMAS PARA INTERNET - TSI     @");
-		System.out.println("@                   FUNDAMENTOS DE PROGRAMAÇÃO ORIENTADA A OBJETOS             @");
-		System.out.println("@                                                                              @");
-		System.out.println("@                                   __|_|__                                    @");
-		System.out.println("@                                   __|_|__                                    @");
-		System.out.println("@                                     | |                                      @");
-		System.out.println("@                                                                              @");
-		System.out.println("@   EQUIPE                                                                     @");
-		System.out.println("@                                                                              @");
-		System.out.println("@   Guilherme Pereira Barbosa                                                  @");
-		System.out.println("@   Guilherme Henrique Pereira                                                 @");
-		System.out.println("@                                                                              @");
-		System.out.println("@   ORIENTADOR                                                                 @");
-		System.out.println("@    Prof. Dr. V. L. Dalle Molle                                               @");
-		System.out.println("@                                                                              @");
-		System.out.println("@                                                                              @");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@                                                                              @");
-		System.out.println("@                                   2026-2                                     @");
-		System.out.println("@                                                                              @");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		
-		
-		
-	}
-	
-	public void showGoodBye(){
-		
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@           _____     _____  _____  ___  _____  _____  ___  _____              @");
-		System.out.println("@             |    |  |        |   |   | |        |   |   | |                  @");
-		System.out.println("@             |    |  |        |   | = | |        |   |   | |====              @");
-		System.out.println("@             |    |  |____    |   |   | |____    |   |___| |____              @");
-		System.out.println("@______________________________________________________________________________@");
-		System.out.println("@                                                                              @");
-		System.out.println("@                            UTFPR - CAMPUS TOLEDO                             @");
-		System.out.println("@              CURSO SUPERIOR DE TECNLOGIA EM SISTEMAS PARA INTERNET - TSI     @");
-		System.out.println("@                   FUNDAMENTOS DE PROGRAMAÇÃO ORIENTADA A OBJETOS             @");
-		System.out.println("@                                                                              @");
-		System.out.println("@                                   __|_|__                                    @");
-		System.out.println("@                                   __|_|__                                    @");
-		System.out.println("@                                     | |                                      @");
-		System.out.println("@                                                                              @");
-		System.out.println("@                       AAAAA DDDD  EEEEE U   U  SSSSS                         @");
-		System.out.println("@                       A   A D   D E     U   U  S                             @");
-		System.out.println("@                       AAAAA D   D EEEEE U   U   SSS                          @");
-		System.out.println("@                       A   A D   D E     U   U      S                         @");
-		System.out.println("@                       A   A DDDD  EEEEE UUUUU  SSSSS                         @");
-		System.out.println("@                                                                              @");
-		System.out.println("@                                                                              @");
-		System.out.println("@                                                                              @");
-		System.out.println("@                                                                              @");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@                                                                              @");
-		System.out.println("@                                   2026-2                                     @");
-		System.out.println("@                                                                              @");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		
-		
-		
-	}
-	
-	public void showInformation(String message) {
-		 Terminal.setBackgroundColor(Terminal.BG_BRIGHT_BRANCO);
-	     Terminal.setTextColor(Terminal.BLUE);
-	     System.out.println(message);
-	}
-	
-	public void showAlert(String message) {
-		 Terminal.setBackgroundColor(Terminal.BG_MAGENTA);
-	     Terminal.setTextColor(Terminal.YELLOW);
-	     System.out.println(message);
-	}
-	
-	public void showError(String message) {
-		 Terminal.setBackgroundColor(Terminal.BG_YELLOW);
-	     Terminal.setTextColor(Terminal.RED);
-	     System.out.println(message);
-	}
-	
-    public void congratulateWinner(String mark) {
-    	Terminal.setBackgroundColor(Terminal.BG_BRIGHT_BRANCO);
-    	Terminal.setTextColor(Terminal.RED);
-        System.out.println("************************************************************");
-        System.out.println("                   VITÓRIA! O PLAYER " + mark + " GANHA!               ");
-        System.out.println("************************************************************");
+    public static void showWelcome() {
+        Terminal.resetAll();
+        Terminal.setTextColor(Terminal.CYAN);
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("@            _____     _____  _____  ___  _____  _____  ___  _____              @");
+        System.out.println("@              |    |  |        |   |   | |        |   |   | |                  @");
+        System.out.println("@              |    |  |        |   | = | |        |   |   | |====              @");
+        System.out.println("@              |    |  |____    |   |   | |____    |   |___| |____              @");
+        System.out.println("@______________________________________________________________________________ @");
+        System.out.println("@                                                                               @");
+        Terminal.setTextColor(Terminal.YELLOW);
+        System.out.println("@                            UTFPR - CAMPUS TOLEDO                              @");
+        System.out.println("@              CURSO SUPERIOR DE TECNOLOGIA EM SISTEMAS PARA INTERNET - TSI     @");
+        System.out.println("@                   FUNDAMENTOS DE PROGRAMAÇÃO ORIENTADA A OBJETOS              @");
+        Terminal.setTextColor(Terminal.CYAN);
+        System.out.println("@                                                                               @");
+        System.out.println("@                                   __|_|__                                     @");
+        System.out.println("@                                   __|_|__                                     @");
+        System.out.println("@                                     | |                                       @");
+        System.out.println("@                                                                               @");
+        Terminal.setTextColor(Terminal.GREEN);
+        System.out.println("@   EQUIPE                                                                      @");
+        System.out.println("@                                                                               @");
+        System.out.println("@   Guilherme Pereira Barbosa                                                   @");
+        System.out.println("@   Guilherme Henrique Pereira                                                  @");
+        System.out.println("@                                                                               @");
+        System.out.println("@   ORIENTADOR                                                                  @");
+        System.out.println("@    Prof. Dr. V. L. Dalle Molle                                                @");
+        Terminal.setTextColor(Terminal.CYAN);
+        System.out.println("@                                                                               @");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("@                                                                               @");
+        System.out.println("@                                   2026-2                                      @");
+        System.out.println("@                                                                               @");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        Terminal.resetAll();
     }
-	
-	public static void main (String args[]) {
-		AppView game = new AppView();
-		game.showWelcome();
-		game.showGoodBye();
-		game.showInformation("Informação!");
-		game.showAlert("Alerta!");
-		game.showError("Erro!");
-		game.congratulateWinner("X");
-		
-	}
-	
+
+    public static void showGoodBye() {
+        Terminal.resetAll();
+        Terminal.setTextColor(Terminal.MAGENTA);
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("@            _____     _____  _____  ___  _____  _____  ___  _____              @");
+        System.out.println("@              |    |  |        |   |   | |        |   |   | |                  @");
+        System.out.println("@              |    |  |        |   | = | |        |   |   | |====              @");
+        System.out.println("@              |    |  |____    |   |   | |____    |   |___| |____              @");
+        System.out.println("@______________________________________________________________________________ @");
+        System.out.println("@                                                                               @");
+        Terminal.setTextColor(Terminal.YELLOW);
+        System.out.println("@                            UTFPR - CAMPUS TOLEDO                              @");
+        System.out.println("@              CURSO SUPERIOR DE TECNOLOGIA EM SISTEMAS PARA INTERNET - TSI     @");
+        System.out.println("@                   FUNDAMENTOS DE PROGRAMAÇÃO ORIENTADA A OBJETOS              @");
+        Terminal.setTextColor(Terminal.MAGENTA);
+        System.out.println("@                                                                               @");
+        System.out.println("@                                   __|_|__                                     @");
+        System.out.println("@                                   __|_|__                                     @");
+        System.out.println("@                                     | |                                       @");
+        System.out.println("@                                                                               @");
+        Terminal.setTextColor(Terminal.BRIGHT_MAGENTA);
+        System.out.println("@                       AAAAA DDDD  EEEEE U   U  SSSSS                          @");
+        System.out.println("@                       A   A D   D E     U   U  S                              @");
+        System.out.println("@                       AAAAA D   D EEEEE U   U   SSS                           @");
+        System.out.println("@                       A   A D   D E     U   U      S                          @");
+        System.out.println("@                       A   A DDDD  EEEEE UUUUU  SSSSS                          @");
+        Terminal.setTextColor(Terminal.MAGENTA);
+        System.out.println("@                                                                               @");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("@                                                                               @");
+        System.out.println("@                                   2026-2                                      @");
+        System.out.println("@                                                                               @");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        Terminal.resetAll();
+    }
+
+    public void showInformation(String msg) {
+        Terminal.resetAll();
+        Terminal.setTextColor(Terminal.BLUE);
+        Terminal.setBackgroundColor(Terminal.BG_WHITE);
+        System.out.println(" [INFORMAÇÃO] " + msg + " ");
+        Terminal.resetAll();
+    }
+
+    public void showAlert(String msg) {
+        Terminal.resetAll();
+        Terminal.setTextColor(Terminal.YELLOW);
+        Terminal.setBackgroundColor(Terminal.BG_MAGENTA);
+        System.out.println(" [ALERTA] " + msg + " ");
+        Terminal.resetAll();
+    }
+
+    public void showError(String msg) {
+        Terminal.resetAll();
+        Terminal.setTextColor(Terminal.RED);
+        Terminal.setBackgroundColor(Terminal.BG_YELLOW);
+        System.out.println(" [ERRO] " + msg + " ");
+        Terminal.resetAll();
+    }
+
+    public void congratulateWinner(String mark) {
+        Terminal.resetAll();
+        Terminal.setTextColor(Terminal.BRIGHT_VERDE);
+        System.out.println(" Meus parabéns! O player '" + mark + "', com sua técnica infálivel, dominou o jogo e venceu!");
+        Terminal.resetAll();
+    }
+
+    public void declareTie() {
+        Terminal.resetAll();
+        Terminal.setTextColor(Terminal.BRIGHT_AMARELO);
+        System.out.println("  Poxa vida, deu velha! Empate, ambos deram seu melhor!");
+        Terminal.resetAll();
+    }
+
+    public void consoleLoser(String mark) {
+        Terminal.resetAll();
+        Terminal.setTextColor(Terminal.BRIGHT_RED);
+        System.out.println("  Que pena, player '" + mark + "'! Não desista, você vai ganhar da próxima vez!");
+        Terminal.resetAll();
+    }
+    
 }
