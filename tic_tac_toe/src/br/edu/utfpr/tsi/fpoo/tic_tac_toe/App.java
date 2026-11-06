@@ -8,23 +8,26 @@ import br.edu.utfpr.tsi.fpoo.tic_tac_toe.view.AppView;
 import br.edu.utfpr.tsi.fpoo.tic_tac_toe.view.GameView;
 
 public class App {
-
-    private AppView appView;
-
-    private GameView gameView;
-    private GameTable gameTable;
-    private GameControl gameControl;
+	
+	private AppView appView;
+	
+	private GameView gameView;
+	private GameTable gameTable;
+	private GameControl gameControl;
 
     private void mount() {
-        gameView = new GameView();
-        gameTable = new GameTable();
-        gameControl = new GameControl(gameView, gameTable);
+        
+    	gameView = new GameView();
+    	gameTable = new GameTable();
+    	gameControl = new GameControl(gameView, gameTable);
     }
+    
 
     private App() {
-        appView = new AppView();
+    	appView = new AppView();
         mount();
     }
+
 
     private void go() {
         Terminal.clear();

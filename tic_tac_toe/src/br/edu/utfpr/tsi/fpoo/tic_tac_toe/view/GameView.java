@@ -39,6 +39,7 @@ public class GameView {
 		System.out.println(String.format(VALUES_LINE, table[2][0], table[2][1], table[2][2]));
 		Terminal.gotoXY(xPos, yPos + 8);
 		System.out.println(BLANK_LINE);
+		System.out.println(" ");
 	}
 
 	public static void main(String[] args) {
