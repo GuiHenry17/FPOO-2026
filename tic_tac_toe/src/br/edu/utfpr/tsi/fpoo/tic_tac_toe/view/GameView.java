@@ -26,6 +26,7 @@ public class GameView {
 		System.out.println(BLANK_LINE);
 		System.out.println(BLANK_LINE);
 		System.out.println(BLANK_LINE);
+		System.out.println(" ");
 	}
 
 	public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package br.edu.utfpr.tsi.fpoo.tic_tac_toe.model;
 
+import static br.edu.utfpr.tsi.fpoo.tic_tac_toe.shared.Mark.*;
+
 import br.edu.utfpr.tsi.fpoo.tic_tac_toe.shared.Mark;
 
 public class GameTable {
@@ -10,7 +12,7 @@ public class GameTable {
 
 		for(int lin=0; lin<3; lin++) {
 			for (int col=0; col<3; col++) {
-				table[lin][col] = Mark.BLANK;
+				table[lin][col] = BLANK;
 			}
 		}
 	}
